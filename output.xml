@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.7.4 on win32)" generated="20200629 01:16:31.015" rpa="false">
+<suite id="s1" name="test GUI" source="C:\Users\python\PycharmProjects\project_to_test\test\test_GUI.robot">
+<kw name="Browser is opened to welcome page" type="setup">
+<kw name="Open Browser To Welcome Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200629 01:16:31.239" level="INFO">Opening browser 'Chrome' to base url 'https://www.todoist.com/'.</msg>
+<status status="PASS" starttime="20200629 01:16:31.238" endtime="20200629 01:16:38.203"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200629 01:16:38.203" endtime="20200629 01:16:40.339"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200629 01:16:40.339" endtime="20200629 01:16:40.339"></status>
+</kw>
+<status status="PASS" starttime="20200629 01:16:31.238" endtime="20200629 01:16:40.339"></status>
+</kw>
+<status status="PASS" starttime="20200629 01:16:31.238" endtime="20200629 01:16:40.339"></status>
+</kw>
+<test id="s1-t1" name="Create new project">
+<kw name="Go To Page" library="PageObjectLibrary" type="setup">
+<tags>
+<tag>page-object</tag>
+<tag>selenium</tag>
+</tags>
+<doc>Go to the url for the given page object.</doc>
+<arguments>
+<arg>LoginPage</arg>
+</arguments>
+<msg timestamp="20200629 01:16:41.380" level="INFO">Opening url 'https://www.todoist.com/users/showlogin'</msg>
+<status status="PASS" starttime="20200629 01:16:40.340" endtime="20200629 01:16:44.337"></status>
+</kw>
+<kw name="User Logs In With Credentials" library="LoginPage">
+<arguments>
+<arg>ttrvuf0@lywenw.com</arg>
+<arg>Aj#%R*g54%u$x=Y</arg>
+</arguments>
+<msg timestamp="20200629 01:16:44.338" level="INFO">Typing text 'ttrvuf0@lywenw.com' into text field 'id=email'.</msg>
+<msg timestamp="20200629 01:16:45.956" level="INFO">Typing text 'Aj#%R*g54%u$x=Y' into text field 'id=password'.</msg>
+<msg timestamp="20200629 01:16:48.079" level="INFO">Clicking button 'xpath=//*[@id="login_form"]/button'.</msg>
+<status status="PASS" starttime="20200629 01:16:44.337" endtime="20200629 01:16:53.314"></status>
+</kw>
+<kw name="Add A New Project" library="ProjectPage">
+<arguments>
+<arg>P1</arg>
+</arguments>
+<msg timestamp="20200629 01:17:03.322" level="INFO">Clicking element 'xpath=//*[@id="projects_list_manager"]/div[1]/a'.</msg>
+<msg timestamp="20200629 01:17:04.505" level="INFO">Typing text 'P1' into text field 'id=edit_project_modal_field_name'.</msg>
+<msg timestamp="20200629 01:17:06.240" level="INFO">Clicking element 'xpath=/html/body/reach-portal/div[3]/div/div/div/form/footer/button[2]'.</msg>
+<status status="PASS" starttime="20200629 01:16:53.320" endtime="20200629 01:17:07.393"></status>
+</kw>
+<status status="PASS" starttime="20200629 01:16:40.340" endtime="20200629 01:17:07.395" critical="yes"></status>
+</test>
+<kw name="Stop webapp and close all browsers" type="teardown">
+<kw name="Terminate All Processes" library="Process">
+<doc>Terminates all still running processes started by this library.</doc>
+<status status="PASS" starttime="20200629 01:17:07.403" endtime="20200629 01:17:07.404"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200629 01:17:07.404" endtime="20200629 01:17:10.002"></status>
+</kw>
+<status status="PASS" starttime="20200629 01:17:07.402" endtime="20200629 01:17:10.002"></status>
+</kw>
+<status status="PASS" starttime="20200629 01:16:31.017" endtime="20200629 01:17:10.002"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="test GUI">test GUI</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
